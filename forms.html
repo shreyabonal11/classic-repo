@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Samarpana Marathon Registration</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #f2f6fa;
+      margin: 0;
+      padding: 0;
+    }
+    header {
+      background: #2e8b57; 
+      color: white;
+      text-align: center;
+      padding: 12px;
+      font-size: 22px;
+      font-weight: bold;
+    }
+    .sub-header {
+      text-align: center;
+      font-size: 16px;
+      margin: 5px 0;
+      color: #333;
+      font-weight: bold;
+    }
+    .date-time {
+      text-align: center;
+      font-size: 13px;
+      color: #ff4500; 
+      margin-bottom: 10px;
+    }
+    .form-title {
+      background: #0073e6; 
+      color: white;
+      text-align: center;
+      padding: 10px;
+      font-size: 18px;
+      font-weight: bold;
+    }
+    .container {
+      max-width: 900px;
+      background: #fff;
+      margin: 20px auto;
+      padding: 20px;
+      border-radius: 10px;
+      box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+    }
+    form {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+    }
+    label {
+      font-weight: bold;
+      margin-bottom: 5px;
+      display: block;
+      color: #222;
+    }
+    input, select {
+      width: 100%;
+      padding: 10px;
+      border: 1px solid #aaa;
+      border-radius: 6px;
+      font-size: 14px;
+    }
+    input:focus, select:focus {
+      outline: none;
+      border-color: #2e8b57;
+      box-shadow: 0 0 5px #2e8b57;
+    }
+    .full-width {
+      grid-column: span 2;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 15px;
+    }
+    table, th, td {
+      border: 1px solid #ccc;
+    }
+    th, td {
+      padding: 8px;
+      text-align: center;
+    }
+    th {
+      background: #2e8b57; 
+      color: white;
+    }
+    tr:nth-child(even) {
+      background: #f9f9f9; 
+    }
+    .actions {
+      grid-column: span 2;
+      display: flex;
+      justify-content: space-between;
+      margin-top: 10px;
+    }
+    .btn {
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 14px;
+      cursor: pointer;
+      font-weight: bold;
+    }
+    .reset {
+      background: #e91e63;
+      color: white;
+    }
+    .reset:hover {
+      background: #c2185b;
+    }
+    .submit {
+      background: #0073e6;
+      color: white;
+    }
+    .submit:hover {
+      background: #005bb5;
+    }
+    .checkbox {
+      grid-column: span 2;
+      font-size: 14px;
+      margin-top: 10px;
+    }
+    @media (max-width: 768px) {
+      form {
+        grid-template-columns: 1fr;
+      }
+      .actions {
+        flex-direction: column;
+        gap: 10px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <header>Samarpana Marathon</header>
+  <div class="sub-header">Run for the Brave – In Honor of the Army</div>
+  <div class="date-time" id="dateTime"></div>
+  <div class="form-title">Registration Form</div>
+  <div class="container">
+    <form id="marathonForm">
+      <div>
+        <label for="name">Full Name *</label>
+        <input type="text" id="name" placeholder="e.g., Rohan Mehta">
+      </div>
+      <div>
+        <label for="email">Email *</label>
+        <input type="email" id="email" placeholder="e.g., rohan.mehta@email.com">
+      </div>
+      <div>
+        <label for="phone">Mobile Number *</label>
+        <input type="tel" id="phone" placeholder="e.g., 9123456789">
+      </div>
+      <div>
+        <label for="dob">Date of Birth *</label>
+        <input type="date" id="dob">
+      </div>
+      <div>
+        <label for="university">University/Organization *</label>
+        <input type="text" id="university" placeholder="e.g., PES University">
+      </div>
+      <div>
+        <label for="usn">Student/Employee ID *</label>
+        <input type="text" id="usn" placeholder="e.g., PES23CSE123">
+      </div>
+      <div>
+        <label for="city">City</label>
+        <input type="text" id="city" placeholder="e.g., Bengaluru">
+      </div>
+      <div>
+        <label for="state">State</label>
+        <input type="text" id="state" placeholder="e.g., Karnataka">
+      </div>
+      <div>
+        <label for="pincode">Pincode</label>
+        <input type="text" id="pincode" placeholder="e.g., 560001">
+      </div>
+      <div>
+        <label for="tshirt">T-shirt Size *</label>
+        <select id="tshirt">
+          <option value="">Select size</option>
+          <option value="XS">XS</option>
+          <option value="S">S</option>
+          <option value="M">M</option>
+          <option value="L">L</option>
+          <option value="XL">XL</option>
+          <option value="XXL">XXL</option>
+          <option value="3XL">3XL</option>
+        </select>
+      </div>
+      <div class="full-width">
+        <table>
+          <tr>
+            <th>Size</th>
+            <th>Chest (in)</th>
+            <th>Chest (cm)</th>
+            <th>Length (cm)</th>
+          </tr>
+          <tr><td>XS</td><td>34"</td><td>86cm</td><td>65cm</td></tr>
+          <tr><td>S</td><td>36"</td><td>91cm</td><td>67cm</td></tr>
+          <tr><td>M</td><td>38"</td><td>97cm</td><td>70cm</td></tr>
+          <tr><td>L</td><td>40"</td><td>102cm</td><td>72cm</td></tr>
+          <tr><td>XL</td><td>42"</td><td>107cm</td><td>75cm</td></tr>
+          <tr><td>XXL</td><td>44"</td><td>112cm</td><td>77cm</td></tr>
+          <tr><td>3XL</td><td>46"</td><td>117cm</td><td>79cm</td></tr>
+        </table>
+      </div>
+      <div class="checkbox">
+        <input type="checkbox" id="confirm"> 
+        <label for="confirm">I confirm the information is accurate and agree to the event terms and waiver.</label>
+      </div>
+      <div class="actions">
+        <button type="reset" class="btn reset">Reset Form</button>
+        <button type="submit" class="btn submit">Submit Form</button>
+      </div>
+    </form>
+  </div>
+  <script>
+    function updateDateTime() {
+      const now = new Date();
+      document.getElementById("dateTime").innerText = "Date & Time: " + now.toLocaleString();
+    }
+    setInterval(updateDateTime, 1000);
+    updateDateTime();
+    document.getElementById("marathonForm").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const requiredFields = ["name", "email", "phone", "dob", "university", "usn", "tshirt"];
+      for (let id of requiredFields) {
+        if (!document.getElementById(id).value.trim()) {
+          alert("Please fill all the required fields!");
+          return;
+        }
+      }
+      if (!/^\d{10}$/.test(document.getElementById("phone").value.trim())) {
+        alert("Mobile number must be exactly 10 digits.");
+        return;
+      }
+      if (!document.getElementById("confirm").checked) {
+        alert("Please confirm the information is accurate.");
+        return;
+      }
+      alert("✅ Registration Successful!");
+      this.reset();
+    });
+  </script>
+</body>
+</html>
